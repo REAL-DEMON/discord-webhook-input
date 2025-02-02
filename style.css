@@ -1,20 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-image: url('https://i.ytimg.com/vi/MgWAyGIBiYw/maxresdefault.jpg');
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    color: white;
 }
 
 .container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     text-align: center;
-    width: 300px;
+    width: 320px;
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #FFD700;
 }
 
 input[type="text"] {
@@ -23,24 +38,28 @@ input[type="text"] {
     margin: 10px 0;
     border-radius: 5px;
     border: 1px solid #ccc;
+    font-size: 16px;
+    background: #333;
+    color: white;
 }
 
 button {
     padding: 10px 15px;
-    background-color: #4CAF50;
+    background-color: #FF4500;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     width: 85%;
+    font-size: 16px;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #ff6347;
 }
 
 #responseMessage {
-    margin-top: 15px;
+    margin-top: 20px;
     font-size: 14px;
-    color: green;
+    color: #00FF00;
 }
