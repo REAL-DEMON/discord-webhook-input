@@ -60,3 +60,13 @@ document.getElementById('getNewTokenButton').addEventListener('click', function(
     const howToGetTokenSection = document.getElementById('howToGetTokenSection');
     howToGetTokenSection.classList.toggle('hidden');
 });
+
+// Copy code to clipboard
+function copyCode() {
+    const codeText = document.getElementById('codeToCopy').innerText;
+    navigator.clipboard.writeText(codeText).then(() => {
+        alert('Code copied to clipboard!');
+    }).catch(err => {
+        alert('Failed to copy code: ', err);
+    });
+}
